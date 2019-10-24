@@ -16,6 +16,9 @@ class GameScene: SKScene
     var count:Int! = 0
     var bush:SKSpriteNode!
     var water:SKSpriteNode!
+    var flag:Bool = false
+    var hanger:SKSpriteNode!
+    var flagHanger:Bool = false
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -63,7 +66,7 @@ class GameScene: SKScene
             addChild(fishs)
             
             // adding fish to the array
-//self.fish.append(fishs)
+
             self.fish.append(fishs)
             
         }
@@ -81,5 +84,27 @@ class GameScene: SKScene
         for point in fish {
             point.position.x += 1
         }
+        
+        // speed og hanger
+        if(flag == true) {
+            if(hanger.position.y>0) {
+                self.hanger.position.y -= 1
+            }
+            
+        }
+        
+        // hanger attaches fishes
+//        for point in fish
+//        {
+//            if
+//                (hanger.frame.intersects(point.frame))
+//            {
+//                if(hanger.position.y<size.height/2)
+//                {
+//                    flagHanger = true
+//                    flag = false
+//                }
+//            }
+//        }
 }
 }
